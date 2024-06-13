@@ -25,9 +25,16 @@ cd dbt-dimensional-modelling/adventureworks
 
 Depending on which database you’ve chosen, install the relevant database adaptor for your database: 
 
+```sh
+poetry new dbt_duckdb_env
+cd dbt_duckdb_env
+poetry add pyarrow duckdb ipykernel pandas dbt dbt-duckdb
+poetry shell
+```
+
 ```text
 # install adaptor for duckdb
-pip install dbt-duckdb
+# pip install dbt-duckdb
 
 # OR 
 
@@ -100,6 +107,10 @@ Examine the database source schema below, paying close attention to:
 Get a better sense of what the records look like by executing select statements using your database's SQL editor.
 
 For example:  
+
+```sh
+duckdb
+```
 
 ```sql
 select * from sales.salesorderheader limit 10; 
